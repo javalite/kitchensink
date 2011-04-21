@@ -29,7 +29,7 @@ public class UnobtrusiveController extends AppController {
 
     public void doGet() {
         respond("this is  GET, data: " + params());
-        }
+    }
 
     @POST
     public void doPost() {
