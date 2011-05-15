@@ -14,14 +14,16 @@ See the License for the specific language governing permissions and
 limitations under the License. 
 */
 
-package app.controllers.general;
+package app.config;
 
-import activeweb.AppController;
+import activeweb.freemarker.AbstractFreeMarkerConfig;
 
 /**
  * @author Igor Polevoy
  */
-public class InfoController extends AppController {
-    public void index(){}
-    public void help(){}
+public class FreeMarkerConfig extends AbstractFreeMarkerConfig {
+    public void init() {
+        //this is to override a strange FreeMarker default processing of numbers 
+        getConfiguration().setNumberFormat("0.##");
+    }
 }
