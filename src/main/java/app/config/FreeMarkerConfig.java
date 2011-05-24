@@ -17,6 +17,7 @@ limitations under the License.
 package app.config;
 
 import activeweb.freemarker.AbstractFreeMarkerConfig;
+import freemarker.template.TemplateExceptionHandler;
 
 /**
  * @author Igor Polevoy
@@ -26,5 +27,6 @@ public class FreeMarkerConfig extends AbstractFreeMarkerConfig {
     public void init() {
         //this is to override a strange FreeMarker default processing of numbers 
         getConfiguration().setNumberFormat("0.##");
+        getConfiguration().setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
     }
 }
