@@ -1,4 +1,4 @@
-kitchensink
+ActiveWeb kitchensink
 ===========
 
 ActiveWeb example project showing some capabilities
