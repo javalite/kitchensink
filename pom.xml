@@ -16,6 +16,7 @@
     </developers>    
     
     <properties>
+        <activeweb.version>1.11-SNAPSHOT</activeweb.version>
         <gwt.version>2.3.0</gwt.version>        
     </properties>
 
@@ -219,23 +220,18 @@
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>activeweb</artifactId>
-            <version>1.9</version>
+            <version>${activeweb.version}</version>
         </dependency>
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>activeweb-testing</artifactId>
-            <version>1.9</version>
+            <version>${activeweb.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.javalite</groupId>
             <artifactId>activeweb-gwt</artifactId>
-            <version>1.9</version>
-        </dependency>        
-        <dependency>
-            <groupId>org.javalite</groupId>
-            <artifactId>activejdbc</artifactId>
-            <version>1.4.9</version>
+            <version>${activeweb.version}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>

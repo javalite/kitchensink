@@ -22,31 +22,28 @@ import org.javalite.activeweb.annotations.POST;
 import org.javalite.common.Util;
 
 import java.io.IOException;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * @author Igor Polevoy
  */
 public class UploadController extends AppController {
 
-    public void index() {
-    }
-
-
+    public void index() {}
 
     @POST
     public void save() throws IOException {
+        List<FormItem> items = multipartFormItems();
+        List<String> messages = new ArrayList<String>();
 
-        Iterator<FormItem> iterator = uploadedFiles();
-        String content = null, name = null;
-        if (iterator.hasNext()){
-            FormItem item = iterator.next();
-            name = item.getName();
-            if(item.isFile())
-                content = Util.read(item.getInputStream());
+        for (FormItem item : items) {
+            if(item.isFile()){
+                messages.add("Found file: " + item.getFileName() + " with size: " + Util.read(item.getInputStream()).length());
+            }else{
+                messages.add("Found field: " + item.getFieldName() + " with value: " + item.getStreamAsString());
+            }
         }
-        flash("file_accepted", "file was accepted: " + name);
-        flash("file_content", content);
+        flash("messages", messages);
         redirect(UploadController.class);
     }
 }
