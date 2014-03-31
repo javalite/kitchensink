@@ -17,7 +17,7 @@
     
     <properties>
         <activeweb.version>1.11-SNAPSHOT</activeweb.version>
-        <gwt.version>2.3.0</gwt.version>        
+        <gwt.version>2.4.0</gwt.version>        
     </properties>
 
     <profiles>        
@@ -54,7 +54,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>gwt-maven-plugin</artifactId>
-                        <version>2.2.0</version>
+                        <version>2.4.0</version>
                         <configuration>
                             <bindAddress>0.0.0.0</bindAddress>
                             <runTarget>/home/gwt</runTarget>
@@ -246,12 +246,12 @@
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-user</artifactId>
-            <version>2.5.1</version>
+            <version>${gwt.version}</version>
         </dependency>        
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-servlet</artifactId>
-            <version>2.5.1</version>
+            <version>${gwt.version}</version>
         </dependency>
         <dependency>
             <groupId>com.sun</groupId>
