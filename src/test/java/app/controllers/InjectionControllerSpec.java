@@ -27,16 +27,14 @@ import org.junit.Test;
  */
 public class InjectionControllerSpec extends ControllerSpec {
 
-
     @Before
     public void before(){
-
         setInjector(Guice.createInjector(new GreeterMockModule()));
     }
+
     @Test
     public void shouldInjectMockService(){
-
         request().get("index");
-        a(assigns().get("message")).shouldBeEqual("Hello from class app.services.GreeterMock");
+        a(val("message")).shouldBeEqual("Hello from class app.services.GreeterMock");
     }
 }
