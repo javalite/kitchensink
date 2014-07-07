@@ -8,8 +8,7 @@ To run:
 * Adjust DB connection parameters in: 
   * `pom.xml` and:
   * `src/main/java/app/config/DbConfig.java`
-
-Then execute:
+* Execute:
 
 ```
 mvn jetty:run
