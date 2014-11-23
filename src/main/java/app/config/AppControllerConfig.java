@@ -15,6 +15,7 @@ limitations under the License.
 */
 package app.config;
 
+import app.controllers.PeopleController;
 import app.controllers.PostsController;
 import app.controllers.RpostsController;
 import org.javalite.activeweb.AbstractControllerConfig;
@@ -34,6 +35,6 @@ public class AppControllerConfig extends AbstractControllerConfig {
         
         addGlobalFilters(new TimingFilter(), new RequestPropertiesLogFilter(), new RequestParamsLogFilter(),
                 headersLogger);
-        add(new DBConnectionFilter()).to(PostsController.class, RpostsController.class);
+        add(new DBConnectionFilter()).to(PostsController.class, RpostsController.class, PeopleController.class);
     }
 }
