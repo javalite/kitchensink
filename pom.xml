@@ -16,7 +16,8 @@
     </developers>    
     
     <properties>
-        <activeweb.version>1.11</activeweb.version>
+        <activeweb.version>1.13</activeweb.version>
+        <activejdbc.version>1.4.11</activejdbc.version>
         <gwt.version>2.4.0</gwt.version>        
     </properties>
 
@@ -96,7 +97,7 @@
             <plugin>
                 <groupId>org.javalite</groupId>
                 <artifactId>db-migrator-maven-plugin</artifactId>
-                <version>1.4.10</version>
+                <version>${activejdbc.version}</version>
                 <dependencies>
                     <dependency>
                         <groupId>mysql</groupId>
@@ -197,7 +198,7 @@
             <plugin>
                 <groupId>org.javalite</groupId>
                 <artifactId>activejdbc-instrumentation</artifactId>
-                <version>1.4.10</version>
+                <version>1.4.11</version>
                 <executions>
                     <execution>
                         <phase>process-classes</phase>
