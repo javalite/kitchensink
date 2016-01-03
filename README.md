@@ -1,17 +1,30 @@
-ActiveWeb kitchensink
-===========
+# ActiveWeb Kitchensink
 
-ActiveWeb example project showing some capabilities
+ActiveWeb + ActiveJDBC example project showing some basic capabilities
 
-To run: 
+## Running 
 
-* Adjust DB connection parameters in: 
-  * `pom.xml` and:
-  * `src/main/java/app/config/DbConfig.java`
-* Execute:
+### Database connection parameters
+
+Open the file and adjust 'development' and 'test' database connection properties
+according to your configuration:
+
+```
+ src/main/resources/database.properties
+```
+
+### Create development and test databases
+
+Execute the following: 
+
+```
+mvn db-migrator:create
+```
+
+### Start Jetty
 
 ```
 mvn jetty:run
 ```
-then access the app at http://localhost:8080 . Explore code, see what makes it tick. 
 
+then access the app at [http://localhost:8080](http://localhost:8080), explore code, see what makes it tick. 

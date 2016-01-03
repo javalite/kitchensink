@@ -24,13 +24,7 @@ import org.javalite.activeweb.AppContext;
 public class DbConfig extends AbstractDBConfig {
 
     public void init(AppContext context) {
-
-        environment("development").jndi("jdbc/kitchensink_development");
-        
-        environment("development").testing().jdbc("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/kitchensink_test", "root", "p@ssw0rd");
-
-        environment("hudson").testing().jdbc("com.mysql.jdbc.Driver", "jdbc:mysql://172.30.64.31/kitchensink_test", "root", "p@ssw0rd");
-
-        environment("production").jndi("jdbc/kitchensink_production");        
+        configFile("/database.properties");
+        environment("production", true).jndi("java:comp/env/jdbc/pigeon");
     }
 }

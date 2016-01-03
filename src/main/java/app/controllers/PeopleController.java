@@ -4,7 +4,6 @@ import app.models.Person;
 import org.javalite.activejdbc.Paginator;
 import org.javalite.activeweb.AppController;
 import org.javalite.activeweb.annotations.POST;
-import org.javalite.common.Convert;
 
 import static org.javalite.common.Convert.toInteger;
 
@@ -30,8 +29,9 @@ public class PeopleController extends AppController {
      *
      * @return paginator
      */
+    @SuppressWarnings("unchecked")
     private Paginator paginator() {
-        Paginator paginator;
+        Paginator<Person> paginator;
         if (sessionHas("paginator")) {
             paginator = (Paginator) session("paginator");
         } else {

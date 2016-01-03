@@ -18,7 +18,8 @@
     <properties>
         <activeweb.version>1.13</activeweb.version>
         <activejdbc.version>1.4.11</activejdbc.version>
-        <gwt.version>2.4.0</gwt.version>        
+        <gwt.version>2.4.0</gwt.version>
+        <environments>development,test</environments>
     </properties>
 
     <profiles>        
@@ -94,6 +95,7 @@
     <build>
         <plugins>
 
+
             <plugin>
                 <groupId>org.javalite</groupId>
                 <artifactId>db-migrator-maven-plugin</artifactId>
@@ -102,38 +104,24 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.35</version>
+                        <version>5.1.34</version>
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <url>${jdbc.url}</url>
-                    <username>${jdbc.user}</username>
-                    <password>${jdbc.password}</password>
-                    <driver>${jdbc.driver}</driver>
+                    <configFile>${project.basedir}/src/main/resources/database.properties</configFile>
+                    <environments>${environments}</environments>
                 </configuration>
                 <executions>
                     <execution>
                         <id>dev_migrations</id>
+                        <phase>validate</phase>
                         <goals>
                             <goal>migrate</goal>
                         </goals>
-                        <phase>validate</phase>
-                    </execution>
-                    <execution>
-                        <id>test_migrations</id>
-                        <goals>
-                            <goal>migrate</goal>
-                        </goals>
-                        <phase>validate</phase>
-                        <configuration>
-                            <url>${jdbc.test.url}</url>
-                            <username>${jdbc.test.user}</username>
-                            <password>${jdbc.test.password}</password>
-                            <driver>${jdbc.driver}</driver>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
