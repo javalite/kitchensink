@@ -9,7 +9,6 @@
     <li><@link_to action="wrapped">Layout that is itself wrapped</@link_to></li>
     <li><@link_to action="wrapped_too">Template wrapper with default layout</@link_to></li>
     <li><@link_to controller="injection">Dependency Injection</@link_to></li>
-    <li><@link_to action="gwt">GWT demo</@link_to></li>
     <li><@link_to controller="people">Paging example</@link_to></li>
     <li><@link_to controller="stats" query_string="s=avg">Running Statistics</@link_to></li>
 </ul>
