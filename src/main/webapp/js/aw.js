@@ -32,6 +32,8 @@ $(document).ready(function() {
         var beforeArg = anchor.attr("data-before-arg");
         var afterArg = anchor.attr("data-after-arg");
         var error = anchor.attr("data-error");
+        var csrfToken = anchor.attr("data-csrf-token");
+        var csrfParam = anchor.attr("data-csrf-param");
 
         var confirmMessage = anchor.attr("data-confirm");
 
@@ -61,6 +63,10 @@ $(document).ready(function() {
         var data = "_method=" + _method;
         if (formId != null) {
             data += "&" + $("#" + formId).serialize();
+        }
+
+        if (type === 'post' && csrfToken != null) {
+            data += "&" + csrfParam + "=" + encodeURIComponent(csrfToken);
         }
 
         if(before != null){
