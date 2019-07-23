@@ -16,7 +16,7 @@
     </developers>    
     
     <properties>
-        <javalite.version>2.3-SNAPSHOT</javalite.version>
+        <javalite.version>2.3</javalite.version>
         <environments>development,test</environments>
 
         <jdbc.driver>com.mysql.jdbc.Driver</jdbc.driver>
